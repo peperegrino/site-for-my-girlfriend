@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>1 Ano ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- TOP NAV -->
+<nav>
+  <div class="nav-logo">1 Ano <span>♡</span></div>
+  <ul class="nav-links">
+    <li><button onclick="go('home')"    id="n-home"    class="active">Início</button></li>
+    <li><button onclick="go('viagens')" id="n-viagens">Viagens</button></li>
+    <li><button onclick="go('filmes')"  id="n-filmes">Filmes</button></li>
+    <li><button onclick="go('perfis')"  id="n-perfis">Perfis</button></li>
+    <li><button onclick="go('cartas')"  id="n-cartas">Cartas</button></li>
+    <li><button onclick="go('musica')"  id="n-musica">Música</button></li>
+  </ul>
+</nav>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║             HOME                    ║
+     ╚══════════════════════════════════════╝ -->
+<section id="home" class="section active">
+
+  <div class="hero-card fu">
+    <div class="hero-pill">✦ &nbsp;1 Ano&nbsp; ✦</div>
+    <h1 class="hero-title">Nós<br><em>Para Sempre.</em></h1>
+
+    <!-- ================================================================
+    📝 TEXTO — INTRODUÇÃO
+    Substitua o texto abaixo pela sua mensagem de abertura.
+    ================================================================ -->
+    <p class="hero-sub">
+      Minha forma de demonstrar o quão grato eu sou poder compartilhar 1 ano de momentos ao seu lado, sou o garoto mais sortudo do mundo. ♡
+    </p>
+    <!-- ============================================================ -->
+
+  </div>
+
+  <div class="nav-cards fu" style="transition-delay:.12s">
+
+    <!-- ================================================================
+    📸 FOTO DO CARD — VIAGENS
+    Clique na área da foto no celular/PC para escolher uma imagem.
+    Para foto fixa (recomendado), substitua o bloco nav-card-photo por:
+      <img src="fotos/viagens-capa.jpg" alt="Viagens"
+           style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:.6rem">
+    ================================================================ -->
+    <div class="nav-card" onclick="go('Nossas viagens')">
+      <div class="nav-card-photo" onclick="event.stopPropagation()">
+        <div class="nav-card-photo-ph" id="ph-viagens"><span>📸</span>Sua foto aqui</div>
+        <div class="nav-card-photo-overlay">Trocar foto</div>
+        <input type="file" accept="image/*" onchange="setCardPhoto(this,'ph-viagens')">
+      </div>
+      <div class="nav-card-title">Nossas Viagens</div>
+      <div class="nav-card-desc">memórias dos lugares que fomos juntos</div>
+      <div class="nav-card-arrow">Abrir →</div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 FOTO DO CARD — FILMES
+    Para foto fixa: <img src="fotos/filmes-capa.jpg" ...>
+    ================================================================ -->
+    <div class="nav-card" onclick="go('filmes')">
+      <div class="nav-card-photo" onclick="event.stopPropagation()">
+        <div class="nav-card-photo-ph" id="ph-filmes"><span>📸</span>Sua foto aqui</div>
+        <div class="nav-card-photo-overlay">Trocar foto</div>
+        <input type="file" accept="image/*" onchange="setCardPhoto(this,'ph-filmes')">
+      </div>
+      <div class="nav-card-title">Nossos Filmes</div>
+      <div class="nav-card-desc">Memórias do nosso lugar favorito</div>
+      <div class="nav-card-arrow">Abrir →</div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 FOTO DO CARD — PERFIS
+    Dica: use uma foto dos dois juntos aqui!
+    ================================================================ -->
+    <div class="nav-card" onclick="go('perfis')">
+      <div class="nav-card-photo" onclick="event.stopPropagation()">
+        <div class="nav-card-photo-ph" id="ph-perfis"><span>📸</span>Sua foto aqui</div>
+        <div class="nav-card-photo-overlay">Trocar foto</div>
+        <input type="file" accept="image/*" onchange="setCardPhoto(this,'ph-perfis')">
+      </div>
+      <div class="nav-card-title">Nossos Perfis</div>
+      <div class="nav-card-desc">Quem somos e o que amamos</div>
+      <div class="nav-card-arrow">Abrir →</div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 FOTO DO CARD — CARTAS
+    Dica: uma foto especial ou de um momento romântico.
+    ================================================================ -->
+    <div class="nav-card" onclick="go('cartas')">
+      <div class="nav-card-photo" onclick="event.stopPropagation()">
+        <div class="nav-card-photo-ph" id="ph-cartas"><span>📸</span>Sua foto aqui</div>
+        <div class="nav-card-photo-overlay">Trocar foto</div>
+        <input type="file" accept="image/*" onchange="setCardPhoto(this,'ph-cartas')">
+      </div>
+      <div class="nav-card-title">Nossas Cartas</div>
+      <div class="nav-card-desc">Envelopes com palavras que saem do coração</div>
+      <div class="nav-card-arrow">Abrir →</div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 FOTO CIRCULAR — MÚSICA (card largo)
+    Formato circular. Ótimo para capa do álbum ou foto dos dois.
+    ================================================================ -->
+    <div class="nav-card wide" onclick="go('musica')">
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div class="nav-card-photo" style="width:90px;height:90px;flex-shrink:0;border-radius:50%;margin-bottom:0" onclick="event.stopPropagation()">
+          <div class="nav-card-photo-ph" id="ph-musica"><span>📸</span></div>
+          <div class="nav-card-photo-overlay" style="border-radius:50%">Trocar</div>
+          <input type="file" accept="image/*" onchange="setCardPhoto(this,'ph-musica')">
+        </div>
+        <div style="flex:1;min-width:140px">
+          <div class="nav-card-title">Nossa Música</div>
+          <div class="nav-card-desc">A trilha sonora da nossa história — ouça agora</div>
+        </div>
+        <div class="nav-card-arrow" style="margin-top:0">Ouvir ♪</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║           VIAGENS                   ║
+     ╚══════════════════════════════════════╝ -->
+<section id="viagens" class="section">
+  <button class="back-btn fu" onclick="go('home')">← Voltar</button>
+  <div class="sec-head fu">
+    <span class="sec-tag">✈ Nossas Aventuras</span>
+    <h2 class="sec-title">Cada lugar<br><em>guarda uma história</em></h2>
+    <div class="line-deco"></div>
+    <p class="sec-desc">Todos os destinos que exploramos juntinhos ♡</p>
+  </div>
+
+  <div class="travel-grid">
+
+    <!-- ================================================================
+    📸 VIAGEM 1 — substitua o bloco t-placeholder por:
+       <img src="fotos/viagem1.jpg" alt="Nome do lugar">
+       Edite o <strong> (nome) e o <span> (data).
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 VIAGEM 2
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 VIAGEM 3
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 VIAGEM 4
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 VIAGEM 5
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📸 VIAGEM 6
+    Para adicionar mais, copie este bloco .travel-card inteiro.
+    ================================================================ -->
+    <div class="travel-card fu">
+      <div class="t-placeholder"><em>📸</em><span>Coloque sua foto aqui</span></div>
+      <div class="travel-cap"><strong>Nome do lugar</strong><span>Mês · Ano</span></div>
+    </div>
+    <!-- ============================================================ -->
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║             FILMES                  ║
+     ╚══════════════════════════════════════╝ -->
+<section id="filmes" class="section">
+  <button class="back-btn fu" onclick="go('home')">← Voltar</button>
+  <div class="sec-head fu">
+    <span class="sec-tag">🎬 Sessão do Casal</span>
+    <h2 class="sec-title">Nossa<br><em>Filmoteca</em></h2>
+    <div class="line-deco"></div>
+    <p class="sec-desc">Cada filme é uma memória com pipoca e abraço</p>
+  </div>
+
+  <div class="movies-grid">
+
+    <!-- ================================================================
+    🎬 FILME 1 — substitua o bloco movie-poster-ph por:
+       <img src="fotos/poster1.jpg" alt="La La Land">
+       Edite: movie-title, movie-year, movie-stars (★=cheia ☆=vazia) e movie-comment.
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">La La Land</div>
+        <div class="movie-year">2016</div>
+        <div class="movie-stars" style="color:#7a5830">★★★★★</div>
+        <div class="movie-comment">"Choramos juntos e não envergonhou ninguém."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    🎬 FILME 2
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">Diário de uma Paixão</div>
+        <div class="movie-year">2004</div>
+        <div class="movie-stars" style="color:#7a5830">★★★★☆</div>
+        <div class="movie-comment">"Clássico do nosso primeiro encontro em casa."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    🎬 FILME 3
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">Título do Filme</div>
+        <div class="movie-year">Ano</div>
+        <div class="movie-stars" style="color:#7a5830">★★★☆☆</div>
+        <div class="movie-comment">"Seu comentário aqui..."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    🎬 FILME 4
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">Título do Filme</div>
+        <div class="movie-year">Ano</div>
+        <div class="movie-stars" style="color:#7a5830">★★★★☆</div>
+        <div class="movie-comment">"Seu comentário aqui..."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    🎬 FILME 5
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">Título do Filme</div>
+        <div class="movie-year">Ano</div>
+        <div class="movie-stars" style="color:#7a5830">★★★★★</div>
+        <div class="movie-comment">"Seu comentário aqui..."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    🎬 FILME 6
+    Para adicionar mais filmes, copie este bloco .movie-card inteiro.
+    ================================================================ -->
+    <div class="movie-card fu">
+      <div class="movie-poster-ph"><span class="mi">📸</span><span>Poster do filme</span></div>
+      <div class="movie-body">
+        <div class="movie-title">Título do Filme</div>
+        <div class="movie-year">Ano</div>
+        <div class="movie-stars" style="color:#7a5830">★★★★☆</div>
+        <div class="movie-comment">"Seu comentário aqui..."</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║             PERFIS                  ║
+     ╚══════════════════════════════════════╝ -->
+<section id="perfis" class="section">
+  <button class="back-btn fu" onclick="go('home')">← Voltar</button>
+  <div class="sec-head fu">
+    <span class="sec-tag">👫 Nosso Universo</span>
+    <h2 class="sec-title">Dois mundos,<br><em>uma história</em></h2>
+    <div class="line-deco"></div>
+  </div>
+
+  <div class="profiles-wrap">
+
+    <!-- ================================================================
+    👤 PERFIL 1 — VOCÊ
+    📸 FOTO: apague o emoji 😊 e descomente a linha com <img>
+    📝 TEXTO: edite name, handle, bio e os itens da lista
+    ================================================================ -->
+    <div class="profile-card fu">
+      <div class="profile-photo">
+        😊
+        <!-- 📸 DESCOMENTE E EDITE:
+        <img src="fotos/foto-sua.jpg" alt="Seu Nome">
+        -->
+      </div>
+      <div class="profile-name">Seu Nome</div>                          <!-- 📝 EDITE -->
+      <div class="profile-handle">@apelido · o apaixonado</div>         <!-- 📝 EDITE -->
+      <p class="profile-bio">Uma bio curtinha — algo carinhoso, engraçado, ou os dois. Escreva do coração.</p> <!-- 📝 EDITE -->
+      <ul class="profile-favs">
+        <li><span class="fi">🍕</span> Comida favorita</li>             <!-- 📝 EDITE -->
+        <li><span class="fi">🎵</span> Música favorita</li>             <!-- 📝 EDITE -->
+        <li><span class="fi">📺</span> Série favorita</li>              <!-- 📝 EDITE -->
+        <li><span class="fi">💬</span> Frase que você sempre fala</li>  <!-- 📝 EDITE -->
+        <li><span class="fi">💕</span> O que mais ama nela</li>         <!-- 📝 EDITE -->
+      </ul>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    👤 PERFIL 2 — ELA
+    📸 FOTO: apague o emoji 🌸 e descomente a linha com <img>
+    📝 TEXTO: edite name, handle, bio e os itens da lista
+    ================================================================ -->
+    <div class="profile-card fu" style="transition-delay:.1s">
+      <div class="profile-photo">
+        🌸
+        <!-- 📸 DESCOMENTE E EDITE:
+        <img src="fotos/foto-dela.jpg" alt="Nome Dela">
+        -->
+      </div>
+      <div class="profile-name">Nome Dela</div>                         <!-- 📝 EDITE -->
+      <div class="profile-handle">@apelido · minha favorita</div>       <!-- 📝 EDITE -->
+      <p class="profile-bio">Uma bio carinhosa — o que você admira nela, o que te faz amá-la todo dia mais.</p> <!-- 📝 EDITE -->
+      <ul class="profile-favs">
+        <li><span class="fi">☕</span> Bebida favorita dela</li>         <!-- 📝 EDITE -->
+        <li><span class="fi">🌺</span> Flor favorita</li>               <!-- 📝 EDITE -->
+        <li><span class="fi">🎬</span> Filme favorito dela</li>         <!-- 📝 EDITE -->
+        <li><span class="fi">✨</span> Jeito especial de ser</li>       <!-- 📝 EDITE -->
+        <li><span class="fi">💕</span> Por que você a ama</li>          <!-- 📝 EDITE -->
+      </ul>
+    </div>
+    <!-- ============================================================ -->
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║             CARTAS                  ║
+     ╚══════════════════════════════════════╝ -->
+<section id="cartas" class="section">
+  <button class="back-btn fu" onclick="go('home')">← Voltar</button>
+  <div class="sec-head fu">
+    <span class="sec-tag">✉ Com Amor</span>
+    <h2 class="sec-title">Nossas<br><em>Cartinhas</em></h2>
+    <div class="line-deco"></div>
+    <p class="sec-desc">Toque nos envelopes para abrir ♡</p>
+  </div>
+
+  <div class="letters-grid">
+
+    <!-- ================================================================
+    💌 CARTA 1 — edite os 4 atributos data-* nesta tag:
+       data-from    → quem escreve  ex: "De mim, para você"
+       data-subject → título        ex: "O dia em que tudo começou"
+       data-letter  → texto completo (quebre linhas normalmente)
+       data-sign    → assinatura    ex: "Com todo meu amor ♡"
+       Edite também env-from e env-sub para combinar com o título.
+    ================================================================ -->
+    <div class="envelope fu"
+      data-from="De mim, para você"
+      data-subject="O dia em que tudo começou"
+      data-letter="Você se lembra do primeiro dia? Eu ainda consigo sentir aquela mistura de nervoso e alegria só de pensar. Foi o melhor dia da minha vida até então — e cada dia depois só ficou melhor.
+
+Obrigado por ter dito sim. Obrigado por ter ficado. Obrigado por ser exatamente quem você é."
+      data-sign="Com todo meu amor ♡"
+      onclick="openLetter(this)">
+      <div class="env-flap"></div>
+      <div class="env-seal">💌</div>
+      <div class="env-body">
+        <div class="env-from">De mim, para você</div>          <!-- 📝 igual ao data-from -->
+        <div class="env-sub">O dia em que tudo começou</div>   <!-- 📝 igual ao data-subject -->
+        <div class="env-hint">Toque para abrir ↗</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    💌 CARTA 2
+    ================================================================ -->
+    <div class="envelope fu"
+      data-from="Uma confissão"
+      data-subject="O que mais admiro em você"
+      data-letter="Tem uma lista enorme de coisas que admiro em você, mas hoje quero falar de uma: a sua forma de enxergar o mundo. Você encontra beleza onde as pessoas nem olham.
+
+Faz tudo mais colorido só de estar presente. Você é a minha parte favorita de cada dia."
+      data-sign="Sempre seu/sua ♡"
+      onclick="openLetter(this)">
+      <div class="env-flap"></div>
+      <div class="env-seal">🌸</div>
+      <div class="env-body">
+        <div class="env-from">Uma confissão</div>
+        <div class="env-sub">O que mais admiro em você</div>
+        <div class="env-hint">Toque para abrir ↗</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    💌 CARTA 3
+    ================================================================ -->
+    <div class="envelope fu"
+      data-from="Lembrança especial"
+      data-subject="Aquela noite que não esqueço"
+      data-letter="Escreva aqui sua memória favorita juntos. Pode ser simples — um passeio, uma risada, um silêncio confortável.
+
+Os melhores momentos às vezes parecem pequenos na hora, mas vivem para sempre na memória."
+      data-sign="Para sempre guardado no coração ♡"
+      onclick="openLetter(this)">
+      <div class="env-flap"></div>
+      <div class="env-seal">✨</div>
+      <div class="env-body">
+        <div class="env-from">Lembrança especial</div>
+        <div class="env-sub">Aquela noite que não esqueço</div>
+        <div class="env-hint">Toque para abrir ↗</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    💌 CARTA 4
+    Para adicionar mais cartas, copie este bloco .envelope inteiro.
+    ================================================================ -->
+    <div class="envelope fu"
+      data-from="Olhando para frente"
+      data-subject="Tudo que quero viver com você"
+      data-letter="Tem tantos planos que quero fazer com você. Viagens que ainda não fizemos, filmes que vamos assistir, manhãs preguiçosas e aventuras sem roteiro.
+
+Mal posso esperar por mais um ano, e mais outro, e mais outro."
+      data-sign="Até onde você quiser ir ♡"
+      onclick="openLetter(this)">
+      <div class="env-flap"></div>
+      <div class="env-seal">🌙</div>
+      <div class="env-body">
+        <div class="env-from">Olhando para frente</div>
+        <div class="env-sub">Tudo que quero viver com você</div>
+        <div class="env-hint">Toque para abrir ↗</div>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║              MÚSICA                 ║
+     ╚══════════════════════════════════════╝ -->
+<section id="musica" class="section">
+  <button class="back-btn fu" onclick="go('home')" style="align-self:flex-start">← Voltar</button>
+  <div class="sec-head fu">
+    <span class="sec-tag">♪ Nossa Trilha</span>
+    <h2 class="sec-title">Nossa<br><em>Música</em></h2>
+    <div class="line-deco"></div>
+    <p class="sec-desc">A canção que sempre vai lembrar de nós</p>
+  </div>
+
+  <div class="music-card fu" style="transition-delay:.1s">
+    <span class="notes-deco" style="top:12px;left:16px;animation-delay:0s">♩</span>
+    <span class="notes-deco" style="top:18px;right:20px;animation-delay:1.5s;font-size:1.4rem">♫</span>
+    <span class="notes-deco" style="bottom:24px;left:20px;animation-delay:3s">♪</span>
+
+    <!-- ================================================================
+    📸 CAPA DO ÁLBUM
+    Apague o emoji 🎵 e descomente a linha com <img>.
+    A imagem gira enquanto a música toca!
+    ================================================================ -->
+    <div class="album-art" id="albumArt">
+      🎵
+      <!-- 📸 DESCOMENTE E EDITE:
+      <img src="fotos/capa-musica.jpg" alt="Capa">
+      -->
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- ================================================================
+    📝 NOME DA MÚSICA E ARTISTA
+    ================================================================ -->
+    <div class="music-song"   id="musicSong">Nossa Música Especial</div>  <!-- 📝 EDITE -->
+    <div class="music-artist" id="musicArtist">Artista Favorito</div>     <!-- 📝 EDITE -->
+    <!-- ============================================================ -->
+
+    <div class="progress-wrap" onclick="seekAudio(event)" id="progressBar">
+      <div class="progress-fill" id="pFill"></div>
+    </div>
+    <div class="time-row">
+      <span id="tCur">0:00</span>
+      <span id="tTot">0:00</span>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" title="Retroceder 10s" onclick="seekRel(-10)">⏮</button>
+      <button class="ctrl-btn ctrl-play" id="playBtn" onclick="toggleAudio()">▶</button>
+      <button class="ctrl-btn" title="Avançar 10s"    onclick="seekRel(10)">⏭</button>
+    </div>
+    <div class="vol-row">
+      <span class="vol-icon">🔈</span>
+      <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.01" value="0.8" oninput="setVol(this.value)"/>
+      <span class="vol-icon">🔊</span>
+    </div>
+  </div>
+
+  <!-- ================================================================
+  🎵 ARQUIVO DE ÁUDIO (MP3)
+  Coloque o .mp3 dentro da pasta do projeto e descomente o src:
+  ================================================================ -->
+  <audio id="audio" loop>
+    <!-- 🎵 DESCOMENTE E EDITE:
+    src="fotos/musica.mp3"
+    -->
+  </audio>
+  <!-- ============================================================ -->
+
+  <!-- ================================================================
+  🎧 SPOTIFY EMBED
+  1. Abra a música no Spotify
+  2. Três pontinhos → Compartilhar → Incorporar faixa → copie o src
+  3. Cole no src do iframe abaixo substituindo o ID atual
+  ================================================================ -->
+  <div class="spotify-section fu" style="transition-delay:.2s">
+    <div class="spotify-label">ou ouça no Spotify</div>
+    <div class="spotify-frame">
+      <iframe
+        id="spotifyFrame"
+        src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUIOKE?utm_source=generator&theme=0"
+        width="100%" height="152" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        style="border-radius:16px;display:block">
+      </iframe>
+    </div>
+  </div>
+  <!-- ============================================================ -->
+
+</section>
+
+
+<!-- MODAL CARTAS -->
+<div class="overlay" id="modal" onclick="closeOvl(event)">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="m-tag"  id="m-from"></div>
+    <div class="m-title" id="m-sub"></div>
+    <div class="m-body"  id="m-body"></div>
+    <div class="m-sign"  id="m-sign"></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV (mobile) -->
+<nav class="bottom-nav">
+  <button class="bn-btn active" id="b-home"    onclick="go('home')">    <span class="bn-icon">🏠</span><span class="bn-lbl">Início</span></button>
+  <button class="bn-btn"        id="b-viagens" onclick="go('viagens')"><span class="bn-icon">✈️</span><span class="bn-lbl">Viagens</span></button>
+  <button class="bn-btn"        id="b-filmes"  onclick="go('filmes')"> <span class="bn-icon">🎬</span><span class="bn-lbl">Filmes</span></button>
+  <button class="bn-btn"        id="b-perfis"  onclick="go('perfis')"> <span class="bn-icon">💞</span><span class="bn-lbl">Perfis</span></button>
+  <button class="bn-btn"        id="b-cartas"  onclick="go('cartas')"> <span class="bn-icon">💌</span><span class="bn-lbl">Cartas</span></button>
+  <button class="bn-btn"        id="b-musica"  onclick="go('musica')"> <span class="bn-icon">🎵</span><span class="bn-lbl">Música</span></button>
+</nav>
+
+
+<script>
+/* ─── NAVEGAÇÃO ───────────────────────────────────── */
+const SECTIONS = ['home','viagens','filmes','perfis','cartas','musica'];
+
+function go(id) {
+  SECTIONS.forEach(s => {
+    const sec = document.getElementById(s);
+    sec.classList.remove('active');
+    sec.querySelectorAll('.fu').forEach(el => el.classList.remove('vis'));
+  });
+  SECTIONS.forEach(s => {
+    const top = document.getElementById('n-' + s);
+    const bot = document.getElementById('b-' + s);
+    if (top) top.classList.toggle('active', s === id);
+    if (bot) bot.classList.toggle('active', s === id);
+  });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(revealFu, 80);
+}
+
+/* ─── FADE UP ─────────────────────────────────────── */
+function revealFu() {
+  const active = document.querySelector('.section.active');
+  if (!active) return;
+  const els = active.querySelectorAll('.fu:not(.vis)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: .08 });
+  els.forEach(el => io.observe(el));
+}
+document.addEventListener('DOMContentLoaded', () => setTimeout(revealFu, 150));
+
+/* ─── FOTO NOS CARDS ──────────────────────────────── */
+function setCardPhoto(input, phId) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const wrap = input.parentElement;
+    const ph = document.getElementById(phId);
+    ph.style.display = 'none';
+    let img = wrap.querySelector('img');
+    if (!img) {
+      img = document.createElement('img');
+      wrap.insertBefore(img, wrap.querySelector('input'));
+    }
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ─── ÁUDIO / PLAYER ──────────────────────────────── */
+const audio   = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const pFill   = document.getElementById('pFill');
+const art     = document.getElementById('albumArt');
+let isPlaying = false;
+
+function fmt(s) {
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2, '0');
+}
+function toggleAudio() {
+  if (!audio.src || audio.src === window.location.href) {
+    isPlaying = !isPlaying;
+    playBtn.textContent = isPlaying ? '⏸' : '▶';
+    art.classList.toggle('spinning', isPlaying);
+    return;
+  }
+  if (audio.paused) { audio.play(); isPlaying = true; }
+  else              { audio.pause(); isPlaying = false; }
+  playBtn.textContent = isPlaying ? '⏸' : '▶';
+  art.classList.toggle('spinning', isPlaying);
+}
+function seekAudio(e) {
+  if (!audio.duration) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+}
+function seekRel(s) {
+  if (!audio.duration) return;
+  audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + s));
+}
+function setVol(v) { audio.volume = v; }
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  pFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+  document.getElementById('tCur').textContent = fmt(audio.currentTime);
+  document.getElementById('tTot').textContent = fmt(audio.duration);
+});
+audio.addEventListener('play',  () => { isPlaying = true;  playBtn.textContent = '⏸'; art.classList.add('spinning'); });
+audio.addEventListener('pause', () => { isPlaying = false; playBtn.textContent = '▶'; art.classList.remove('spinning'); });
+
+/* ─── MODAL CARTAS ────────────────────────────────── */
+function openLetter(el) {
+  document.getElementById('m-from').textContent = el.dataset.from;
+  document.getElementById('m-sub').textContent  = el.dataset.subject;
+  document.getElementById('m-body').textContent = el.dataset.letter;
+  document.getElementById('m-sign').textContent = el.dataset.sign;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeOvl(e) { if (e.target.id === 'modal') closeModal(); }
+
+/* ─── PARTICLES ───────────────────────────────────── */
+const SYM   = ['♡','✦','·','✿','˖','❀','◦','✧'];
+const pcont = document.getElementById('particles');
+
+function spawn() {
+  const p = document.createElement('span');
+  p.className = 'pt';
+  p.textContent = SYM[Math.floor(Math.random() * SYM.length)];
+  const sz  = Math.random() * 10 + 7;
+  const dur = Math.random() * 14 + 10;
+  const del = Math.random() * 6;
+  p.style.cssText = `
+    left:${Math.random() * 100}%;
+    font-size:${sz}px;
+    color:${Math.random() > .6 ? '#8b2a45' : '#3d0e1e'};
+    animation-duration:${dur}s;
+    animation-delay:${del}s;
+  `;
+  pcont.appendChild(p);
+  setTimeout(() => p.remove(), (dur + del) * 1000);
+}
+for (let i = 0; i < 16; i++) spawn();
+setInterval(spawn, 2500);
+</script>
+</body>
+</html>
