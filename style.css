@@ -346,24 +346,68 @@ nav {
 ═══════════════════════════════════════ */
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
-  gap: 1rem; max-width: 860px; margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; max-width: 100%; margin: 0 auto;
+}
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; max-width: 100%; margin: 0 auto;
+}
+.movies-grid .nav-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.movies-grid .nav-card-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  min-height: 320px;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 0;
+}
+.movies-grid .nav-card-photo img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+}
+.movies-grid .nav-card-title,
+.movies-grid .nav-card-desc,
+.movies-grid .nav-card-arrow {
+  padding: .85rem .8rem 0 .8rem;
+}
+.movies-grid .nav-card-desc {
+  margin-top: .3rem;
+}
+.movies-grid .nav-card-arrow {
+  margin-top: .75rem;
+  padding-bottom: .9rem;
 }
 .movie-card {
+  display: grid;
+  grid-template-rows: auto minmax(150px, auto);
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r2); overflow: hidden;
   transition: var(--t) var(--ease); cursor: pointer;
 }
 .movie-card:hover { transform: translateY(-4px); border-color: var(--border2); box-shadow: 0 12px 40px rgba(0,0,0,.5); }
-.movie-poster {
+.movie-poster,
+.movie-poster-ph {
   width: 100%; aspect-ratio: 2/3;
+  min-height: 240px;
   background: linear-gradient(145deg, var(--surface2), var(--bg3));
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: .5rem; color: var(--text-dim); position: relative; overflow: hidden;
 }
 .movie-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .movie-poster-ph {
-  width: 100%; aspect-ratio: 2/3;
   background: linear-gradient(145deg, var(--surface2) 0%, rgba(200,86,110,.15) 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: .5rem;
@@ -499,11 +543,11 @@ nav {
 #musica.active { display: flex; }
 
 .music-card {
-  width: 100%; max-width: 420px;
+  width: 100%; max-width: 760px;
   background: var(--surface);
   border: 1px solid var(--border2);
   border-radius: var(--r2);
-  padding: 2.2rem 1.8rem 2rem;
+  padding: 2.2rem 2rem 2rem;
   box-shadow: 0 0 60px var(--rose-glow), 0 20px 60px rgba(0,0,0,.6);
   position: relative; overflow: hidden;
 }
@@ -517,18 +561,18 @@ nav {
 
 /* album art */
 .album-art {
-  width: 160px; height: 160px;
-  border-radius: var(--r2);
+  width: 220px; height: 220px;
+  border-radius: 50%;
   margin: 0 auto 1.6rem;
-  background: linear-gradient(145deg, var(--surface2), var(--bg));
-  border: 1px solid var(--border2);
+  background: transparent;
+  border: none;
   display: flex; align-items: center; justify-content: center;
   font-size: 4rem;
   box-shadow: 0 8px 32px rgba(0,0,0,.5), 0 0 20px var(--rose-glow);
   position: relative; overflow: hidden;
   transition: var(--t) var(--ease);
 }
-.album-art img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: var(--r2); }
+.album-art img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
 .album-art.spinning { animation: spin 8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -581,7 +625,7 @@ nav {
 
 /* spotify embed */
 .spotify-section {
-  width: 100%; max-width: 420px;
+  width: 100%; max-width: 760px;
   margin-top: 1.4rem;
   text-align: center;
 }
@@ -594,6 +638,22 @@ nav {
 .spotify-frame {
   width: 100%; border-radius: 16px; overflow: hidden;
   border: 1px solid var(--border);
+}
+.spotify-frame iframe {
+  width: 100%; height: 232px;
+  border: none;
+}
+.spotify-link {
+  margin-top: .9rem;
+}
+.spotify-link a {
+  color: var(--rose);
+  font-size: .9rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.spotify-link a:hover {
+  text-decoration: underline;
 }
 
 /* music note deco */
